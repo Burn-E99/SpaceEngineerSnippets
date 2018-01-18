@@ -1,0 +1,16 @@
+logistic bot
+1. Check Source (start of message, LGB#)
+if item request
+2. Verify item list (middle of message) and item counts
+3. Travel to docking connector (LG drone docking)
+4. Transfer items to internal inventory
+5. undock
+6. call to client for location
+
+if location to deliver to
+2. travel to location given
+3. dock to location's docking port
+4. transfer items to client
+5. undock
+6. broadcast done message to LGC
+6. travel to resting place

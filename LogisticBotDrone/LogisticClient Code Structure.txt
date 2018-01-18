@@ -1,0 +1,17 @@
+client
+1. Check Source (start of message, LBC#)
+if sending based on button press
+2. get list of items from text panel
+3. verify item list
+4. format into message (LGB# ir itemlist)
+5. broadcast message
+
+if sending location by request from LGB#
+2. change text display to "Please wait, Logistic Bot # is on its way"
+3. bring ship to a complete stop
+4. wait for ship to stop
+5. lock engines away from cockpit
+
+if recieving done message
+2. clear text display
+3. allow cockpit to control ship again

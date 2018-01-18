@@ -1,0 +1,14 @@
+1. check source (start of message, DF)
+if master (timer block)
+2. get ID (from self)
+3. get GPS (live)
+4. get passphrase (from self)
+5. encrypt message
+6. transmit message (broadcast to allies)
+
+if slave (antenna block)
+2. decrypt entire message (ID, GPS, passphrase)
+3. check ID (message against self)
+4. check passphrase (message against self)
+5. set new waypoint
+6. head to waypoint

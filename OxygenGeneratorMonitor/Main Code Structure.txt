@@ -1,0 +1,6 @@
+1. check oxygen level in tank
+if greater than 75%
+2. turn off oxygen generator
+
+else if less than 50%
+2. turn on oxygen generator

@@ -1,0 +1,22 @@
+1. determine which sensor the player is at
+if player outside
+2. close inside door
+3. depressurize airlock
+4. open outside door
+5. wait for player to reach middle sensor
+6. close outside door
+7. pressurize airlock
+8. open inside door
+9. wait for player to reach inside sensor
+10. close inside door
+
+if player inside
+2. close outside door
+3. pressurize airlock
+4. open inside door
+5. wait for player to reach middle sensor
+6. close inside door
+7. depressurize airlock
+8. open outside door
+9. wait for player to reach inside sensor
+10. close outside door

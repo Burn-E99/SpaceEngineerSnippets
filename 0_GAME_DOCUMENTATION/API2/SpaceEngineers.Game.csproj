@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{B9DFDBDD-4537-4DD7-84ED-83067114DB7B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SpaceEngineers.Game</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sandbox.Game">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Game">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Sandbox.Common">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sandbox.Graphics">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Math">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SpaceEngineers.ObjectBuilders">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.ObjectBuilders.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Library">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Render">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Render.dll</HintPath>
+    </Reference>
+    <Reference Include="HavokWrapper">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\HavokWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Input">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Audio">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Scripting">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Scripting.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyAirVent.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyArtificialMassBlock.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyButtonPanel.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyControlPanel.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyGravityGenerator.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyGravityGeneratorBase.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyGravityGeneratorSphere.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyInteriorLight.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyLandingGear.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyLargeConveyorTurretBase.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyLargeGatlingTurret.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyLargeInteriorTurret.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyLargeMissileTurret.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyMedicalRoom.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyOxygenFarm.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyParachute.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyShipMergeBlock.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMySolarPanel.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMySoundBlock.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMySpaceBall.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyTimerBlock.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\IMyVirtualMass.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI.Ingame\VentStatus.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyAirVent.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyArtificialMassBlock.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyButtonPanel.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyControlPanel.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyGravityGenerator.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyGravityGeneratorBase.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyGravityGeneratorSphere.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyInteriorLight.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyLandingGear.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyLargeConveyorTurretBase.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyLargeGatlingTurret.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyLargeInteriorTurret.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyLargeMissileTurret.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyMedicalRoom.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyOxygenFarm.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyParachute.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyShipMergeBlock.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMySolarPanel.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMySoundBlock.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMySpaceBall.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyTimerBlock.cs" />
+    <Compile Include="SpaceEngineers.Game.ModAPI\IMyVirtualMass.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

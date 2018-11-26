@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{0146A9F3-4270-4084-B63C-E6B48FA65E15}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Sandbox.Common</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="VRage.Game">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Math">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Library">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Input">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Input.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\DoorStatus.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\FlightMode.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyAdvancedDoor.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyAirtightDoorBase.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyAirtightHangarDoor.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyAirtightSlideDoor.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyAssembler.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyAttachableTopBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyBatteryBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyBeacon.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyBlockGroup.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyCameraBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyCargoContainer.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyCockpit.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyCollector.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyConveyor.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyConveyorSorter.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyConveyorTube.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyCryoChamber.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyDecoy.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyDoor.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyExtendedPistonBase.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyFunctionalBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyGasGenerator.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyGasTank.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyGridProgramRuntimeInfo.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyGridTerminalSystem.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyGyro.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyJumpDrive.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyLargeTurretBase.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyLaserAntenna.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyLightingBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyMechanicalConnectionBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyMotorAdvancedRotor.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyMotorAdvancedStator.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyMotorBase.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyMotorRotor.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyMotorStator.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyMotorSuspension.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyOreDetector.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyOxygenGenerator.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyOxygenTank.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyPassage.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyPistonBase.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyPistonTop.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyProductionBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyProgrammableBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyProjector.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyRadioAntenna.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyReactor.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyRefinery.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyReflectorLight.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyRemoteControl.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMySensorBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyShipConnector.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyShipController.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyShipDrill.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyShipGrinder.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyShipToolBase.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyShipWelder.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMySmallGatlingGun.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMySmallMissileLauncher.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMySmallMissileLauncherReload.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyTerminalBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyTextPanel.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyThrust.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyUpgradableBlock.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyUpgradeModule.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyUserControllableGun.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyWarhead.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\IMyWheel.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyAssemblerMode.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyConveyorSorterMode.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyDetectedEntityInfo.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyDetectedEntityType.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyGridProgram.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyInventoryItemFilter.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyJumpDriveStatus.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyLaserAntennaStatus.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyPlanetElevation.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyProductionItem.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyShipConnectorStatus.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyShipMass.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyShipVelocities.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyTransmitTarget.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\MyWaypointInfo.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\PistonStatus.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\TerminalActionParameter.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\TerminalBlockExtentions.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\UpdateFrequency.cs" />
+    <Compile Include="Sandbox.ModAPI.Ingame\UpdateType.cs" />
+    <Compile Include="Sandbox.ModAPI\BuildCheckResult.cs" />
+    <Compile Include="Sandbox.ModAPI\CustomActionGetDelegate.cs" />
+    <Compile Include="Sandbox.ModAPI\CustomControlGetDelegate.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyAdvancedDoor.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyAirtightDoorBase.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyAirtightHangarDoor.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyAirtightSlideDoor.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyAssembler.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyAttachableTopBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyBatteryBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyBeacon.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyBlockGroup.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyCameraBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyCargoContainer.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyCockpit.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyCollector.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyConveyor.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyConveyorSorter.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyConveyorTube.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyCryoChamber.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyDecoy.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyDoor.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyExtendedPistonBase.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyFunctionalBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyGasGenerator.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyGasTank.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyGridProgram.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyGridTerminalSystem.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyGyro.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyIngameScripting.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyInventoryBag.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyJumpDrive.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyLargeTurretBase.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyLaserAntenna.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyLightingBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyMechanicalConnectionBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyMeteor.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyMotorAdvancedRotor.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyMotorAdvancedStator.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyMotorBase.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyMotorRotor.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyMotorStator.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyMotorSuspension.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyOreDetector.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyOxygenGenerator.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyOxygenTank.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyPassage.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyPistonBase.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyPistonTop.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyProductionBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyProgrammableBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyProjector.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyRadioAntenna.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyReactor.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyRefinery.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyReflectorLight.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyRemoteControl.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyScriptBlacklist.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyScriptBlacklistBatch.cs" />
+    <Compile Include="Sandbox.ModAPI\IMySensorBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyShipConnector.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyShipController.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyShipDrill.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyShipGrinder.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyShipToolBase.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyShipWelder.cs" />
+    <Compile Include="Sandbox.ModAPI\IMySmallGatlingGun.cs" />
+    <Compile Include="Sandbox.ModAPI\IMySmallMissileLauncher.cs" />
+    <Compile Include="Sandbox.ModAPI\IMySmallMissileLauncherReload.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyTerminalActionsHelper.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyTerminalBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyTerminalControls.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyTextPanel.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyThrust.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyUpgradableBlock.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyUpgradeModule.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyUserControllableGun.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyWarhead.cs" />
+    <Compile Include="Sandbox.ModAPI\IMyWheel.cs" />
+    <Compile Include="Sandbox.ModAPI\MyAPIGateway.cs" />
+    <Compile Include="Sandbox.ModAPI\MyProductionQueueItem.cs" />
+    <Compile Include="Sandbox.ModAPI\MyWhitelistTarget.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

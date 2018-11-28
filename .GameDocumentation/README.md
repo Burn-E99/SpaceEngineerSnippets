@@ -3,7 +3,7 @@ This documentation is derived from decompiling one of the DLLs in the Space Engi
 
 Sometime in the future, I may rewrite this into a proper doc page (along with the other snippets I have).
 
-# IMPORTANT NOTE
+# IMPORTANT NOTICE
 I DO NOT OWN THIS DOCUMENTATION.  I SIMPLY USED A PROGRAM CALLED ILSpy (https://github.com/icsharpcode/ILSpy) TO DECOMPILE THE FOLLOWING DLLS:
 
 * API1: `SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Common.dll`

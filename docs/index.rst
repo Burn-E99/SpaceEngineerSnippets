@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Burn's Space Engineers Stuff's documentation!
+Welcome to Burn's Space Engineers documentation!
 ========================================================
 
 .. toctree::

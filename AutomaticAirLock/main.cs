@@ -1,13 +1,19 @@
 public void Main(string a) {
-    // my name is al pb id
-    string myID = Me.CustomName.Split(' ')[2];
-    IMySensorBlock si = GridTerminalSystem.GetBlockWithName("al si " + myID) as IMySensorBlock;
-    IMySensorBlock sc = GridTerminalSystem.GetBlockWithName("al sc " + myID) as IMySensorBlock;
-    IMySensorBlock so = GridTerminalSystem.GetBlockWithName("al so " + myID) as IMySensorBlock;
-    IMyDoor _di = GridTerminalSystem.GetBlockWithName("al di " + myID) as IMyDoor;
-    IMyDoor _do = GridTerminalSystem.GetBlockWithName("al do " + myID) as IMyDoor;
-    IMyAirVent av = GridTerminalSystem.GetBlockWithName("al av " + myID) as IMyAirVent;
-    IMyTimerBlock tb = GridTerminalSystem.GetBlockWithName("al tb " + myID) as IMyTimerBlock;
+    string myID = "";
+    string myPF = " ";
+    if(Me.CustomName.Split(' ')[0].Equals("al")) {
+        myID = Me.CustomName.Split(' ')[2];
+    } else {
+        myID = Me.CustomName.Split(' ')[3];
+        myPF = Me.CustomName.Split(' ')[0] + " ";
+    }
+    IMySensorBlock si = GridTerminalSystem.GetBlockWithName(myPF + "al si " + myID) as IMySensorBlock;
+    IMySensorBlock sc = GridTerminalSystem.GetBlockWithName(myPF + "al sc " + myID) as IMySensorBlock;
+    IMySensorBlock so = GridTerminalSystem.GetBlockWithName(myPF + "al so " + myID) as IMySensorBlock;
+    IMyDoor _di = GridTerminalSystem.GetBlockWithName(myPF + "al di " + myID) as IMyDoor;
+    IMyDoor _do = GridTerminalSystem.GetBlockWithName(myPF + "al do " + myID) as IMyDoor;
+    IMyAirVent av = GridTerminalSystem.GetBlockWithName(myPF + "al av " + myID) as IMyAirVent;
+    IMyTimerBlock tb = GridTerminalSystem.GetBlockWithName(myPF + "al tb " + myID) as IMyTimerBlock;
     if(myID.Equals("0") && a.StartsWith("id:")) {
         string newID = a.Split(':')[1];
         Me.CustomName = Me.CustomName.Substring(0, Me.CustomName.Length - 1) + newID;

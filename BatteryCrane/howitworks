@@ -1,0 +1,4 @@
+fine details are in my notebook, but tldr for the repo is the script should:
+- keep user updated on what its doing
+- be able to start from any location in case user does something weird
+- be able to prevent collisions

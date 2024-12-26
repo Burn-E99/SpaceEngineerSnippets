@@ -215,8 +215,11 @@ float getTargetLocation(int pistonGroup, string targetLocation) {
       return 0.0f;
   }
 }
-string generateChecksum(List<IMyPistonBase> allPistons, IMyMotorAdvancedStator doorHinge) {
+string generateChecksum(List<IMyPistonBase> allPistons, IMyMotorAdvancedStator doorHinge, bool magPlatesLocked, bool bayALocked, bool bayBLocked) {
   string checksum = doorHinge.Enabled ? "1" : "0";
+  checksum += magPlatesLocked ? "1" : "0";
+  checksum += bayALocked ? "1" : "0";
+  checksum += bayBLocked ? "1" : "0";
   foreach (IMyPistonBase piston in allPistons) {
     checksum += piston.Enabled;
   }
@@ -676,7 +679,7 @@ public void Main(string arg, UpdateType updateType) {
           }
           break;
         case finishStr:
-          Me.CustomData = generateChecksum(allPistons, doorHinge);
+          Me.CustomData = generateChecksum(allPistons, doorHinge, magPlatesLocked, bayALocked, bayBLocked);
           applyPistonEnabled(allPistons, false);
           applyPistonDistanceLimit(allPistons, 0.0f, 10.0f);
           applyHingeEnabled(doorHinge, false);
@@ -691,7 +694,7 @@ public void Main(string arg, UpdateType updateType) {
           break;
       }
     } else if (curMode == rawCompleteStr) {
-      if (Me.CustomData != generateChecksum(allPistons, doorHinge)) {
+      if (Me.CustomData != generateChecksum(allPistons, doorHinge, magPlatesLocked, bayALocked, bayBLocked)) {
         Storage = manualStr;
       }
     }

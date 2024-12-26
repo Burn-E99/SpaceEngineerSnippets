@@ -22,10 +22,14 @@ This is a list of all projects I am working on currently, or have finished.  If 
 - Zamboni Scripts
   - This folder contains the scripts needed to run an ice scraping vehicle I built.  For a showcase of this, see here: https://www.youtube.com/watch?v=da0I-cJfyqQ
 
+---
+
 ### A note for future self
 Game documentation has been removed from this repository as I found a good documentation source:
 - https://github.com/malware-dev/MDK-SE/wiki/Api-Index
 - https://github.com/malforge/mdk2
+
+---
 
 ### Notes about old scripts
 So apparently at some point between now and when I last was writing these programs, Keen added support for loops into Space Engineers.  This means that any of the old code in here requires a timer block and newer ones are much less likely to need one.

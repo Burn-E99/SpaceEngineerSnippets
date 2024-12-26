@@ -36,9 +36,9 @@ const string _statusPanelName = "BC Status LCD";
 const string _statusLightGroup = "BC Status Lights";
 // Hinge for floor door
 const string _doorHingeName = "BC Door Hinge";
-// Sci-Fi Four-Button Panel for controlling the crane
-const string _controlPanelName = "BC Button Panel";
-// Group of Sci-Fi One-Button Panel for E-STOP buttons
+// Group of Sci-Fi Four-Button Panels for controlling the crane
+const string _controlPanels = "BC Button Panel";
+// Group of Sci-Fi One-Button Panels for E-STOP buttons
 const string _eStopButtons = "BC E-STOP Buttons";
 
 // Max velocities for each piston group, must be positive values
@@ -240,21 +240,10 @@ void updateTextSurfaceSettings(IMyTextSurface surface, float fontSize, float pad
 void updateTextSurfaceSettings(IMyTextSurface surface, Color bgColor, float scale = 1.0f) {
   updateTextSurfaceSettings(surface, 3.0f * scale, 10.0f * scale, new Color(255, 255, 255), bgColor, TextAlignment.CENTER);
 }
-void updateButtons(IMyButtonPanel controlPanel, List<IMyButtonPanel> eStopButtons, bool parkSafe, bool bayASafe, bool bayBSafe) {
+void updateButtons(List<IMyButtonPanel> controlPanels, List<IMyButtonPanel> eStopButtons, bool parkSafe, bool bayASafe, bool bayBSafe) {
   Color unsafeColor = new Color(100, 0, 0);
   Color autoColor = new Color(200, 100, 0);
   Color readyColor = new Color(0, 0, 100);
-
-  IMyTextSurfaceProvider controlPanelSurfaces = controlPanel as IMyTextSurfaceProvider;
-  IMyTextSurface parkPanel = controlPanelSurfaces.GetSurface(0);
-  IMyTextSurface shipPanel = controlPanelSurfaces.GetSurface(1);
-  IMyTextSurface bayAPanel = controlPanelSurfaces.GetSurface(2);
-  IMyTextSurface bayBPanel = controlPanelSurfaces.GetSurface(3);
-
-  parkPanel.ContentType = ContentType.TEXT_AND_IMAGE;
-  shipPanel.ContentType = ContentType.TEXT_AND_IMAGE;
-  bayAPanel.ContentType = ContentType.TEXT_AND_IMAGE;
-  bayBPanel.ContentType = ContentType.TEXT_AND_IMAGE;
 
   foreach (IMyButtonPanel eStopButton in eStopButtons) {
     IMyTextSurfaceProvider eStopPanel = eStopButton as IMyTextSurfaceProvider;
@@ -265,51 +254,64 @@ void updateButtons(IMyButtonPanel controlPanel, List<IMyButtonPanel> eStopButton
     eStopButton.SetCustomButtonName(0, "E-STOP");
   }
 
-  if (Storage == "") {
-    controlPanel.SetCustomButtonName(0, "");
-    controlPanel.SetCustomButtonName(1, "");
-    controlPanel.SetCustomButtonName(2, "");
-    controlPanel.SetCustomButtonName(3, "");
+  foreach (IMyButtonPanel controlPanel in controlPanels) {
+    IMyTextSurfaceProvider controlPanelSurfaces = controlPanel as IMyTextSurfaceProvider;
+    IMyTextSurface parkPanel = controlPanelSurfaces.GetSurface(0);
+    IMyTextSurface shipPanel = controlPanelSurfaces.GetSurface(1);
+    IMyTextSurface bayAPanel = controlPanelSurfaces.GetSurface(2);
+    IMyTextSurface bayBPanel = controlPanelSurfaces.GetSurface(3);
 
-    updateTextSurfaceSettings(parkPanel, unsafeColor, 2.0f);
-    updateTextSurfaceSettings(shipPanel, unsafeColor, 2.0f);
-    updateTextSurfaceSettings(bayAPanel, unsafeColor, 2.0f);
-    updateTextSurfaceSettings(bayBPanel, unsafeColor, 2.0f);
+    parkPanel.ContentType = ContentType.TEXT_AND_IMAGE;
+    shipPanel.ContentType = ContentType.TEXT_AND_IMAGE;
+    bayAPanel.ContentType = ContentType.TEXT_AND_IMAGE;
+    bayBPanel.ContentType = ContentType.TEXT_AND_IMAGE;
 
-    parkPanel.WriteText("Please", false);
-    shipPanel.WriteText("Finish", false);
-    bayAPanel.WriteText("Script", false);
-    bayBPanel.WriteText("Setup", false);
-  } else if (Storage.StartsWith(rawAutoStr)) {
-    controlPanel.SetCustomButtonName(0, "");
-    controlPanel.SetCustomButtonName(1, "");
-    controlPanel.SetCustomButtonName(2, "");
-    controlPanel.SetCustomButtonName(3, "");
+    if (Storage == "") {
+      controlPanel.SetCustomButtonName(0, "");
+      controlPanel.SetCustomButtonName(1, "");
+      controlPanel.SetCustomButtonName(2, "");
+      controlPanel.SetCustomButtonName(3, "");
 
-    updateTextSurfaceSettings(parkPanel, autoColor, 2.0f);
-    updateTextSurfaceSettings(shipPanel, autoColor, 2.0f);
-    updateTextSurfaceSettings(bayAPanel, autoColor, 2.0f);
-    updateTextSurfaceSettings(bayBPanel, autoColor, 2.0f);
+      updateTextSurfaceSettings(parkPanel, unsafeColor, 2.0f);
+      updateTextSurfaceSettings(shipPanel, unsafeColor, 2.0f);
+      updateTextSurfaceSettings(bayAPanel, unsafeColor, 2.0f);
+      updateTextSurfaceSettings(bayBPanel, unsafeColor, 2.0f);
 
-    parkPanel.WriteText("Please", false);
-    shipPanel.WriteText("Wait:", false);
-    bayAPanel.WriteText("Auto", false);
-    bayBPanel.WriteText("Mode", false);
-  } else {
-    controlPanel.SetCustomButtonName(0, parkSafe ? "Move Crane to Park" : "");
-    controlPanel.SetCustomButtonName(1, "Move Crane to Ship Hole");
-    controlPanel.SetCustomButtonName(2, bayASafe ? "Move Crane to Bay A" : "");
-    controlPanel.SetCustomButtonName(3, bayBSafe ? "Move Crane to Bay B": "");
+      parkPanel.WriteText("Please", false);
+      shipPanel.WriteText("Finish", false);
+      bayAPanel.WriteText("Script", false);
+      bayBPanel.WriteText("Setup", false);
+    } else if (Storage.StartsWith(rawAutoStr)) {
+      controlPanel.SetCustomButtonName(0, "");
+      controlPanel.SetCustomButtonName(1, "");
+      controlPanel.SetCustomButtonName(2, "");
+      controlPanel.SetCustomButtonName(3, "");
 
-    updateTextSurfaceSettings(parkPanel, parkSafe ? readyColor : unsafeColor);
-    updateTextSurfaceSettings(shipPanel, readyColor);
-    updateTextSurfaceSettings(bayAPanel, bayASafe ? readyColor : unsafeColor);
-    updateTextSurfaceSettings(bayBPanel, bayBSafe ? readyColor : unsafeColor);
+      updateTextSurfaceSettings(parkPanel, autoColor, 2.0f);
+      updateTextSurfaceSettings(shipPanel, autoColor, 2.0f);
+      updateTextSurfaceSettings(bayAPanel, autoColor, 2.0f);
+      updateTextSurfaceSettings(bayBPanel, autoColor, 2.0f);
 
-    parkPanel.WriteText(parkSafe ? "Move Crane\nto\nPark" : "Cannot\nPark With\nBattery", false);
-    shipPanel.WriteText("Move Crane\nto\nShip Hole", false);
-    bayAPanel.WriteText(bayASafe ? "Move Crane\nto\nBay A" : "Disabled\nUnsafe\nMovement", false);
-    bayBPanel.WriteText(bayBSafe ? "Move Crane\nto\nBay B" : "Disabled\nUnsafe\nMovement", false);
+      parkPanel.WriteText("Please", false);
+      shipPanel.WriteText("Wait:", false);
+      bayAPanel.WriteText("Auto", false);
+      bayBPanel.WriteText("Mode", false);
+    } else {
+      controlPanel.SetCustomButtonName(0, parkSafe ? "Move Crane to Park" : "");
+      controlPanel.SetCustomButtonName(1, "Move Crane to Ship Hole");
+      controlPanel.SetCustomButtonName(2, bayASafe ? "Move Crane to Bay A" : "");
+      controlPanel.SetCustomButtonName(3, bayBSafe ? "Move Crane to Bay B": "");
+
+      updateTextSurfaceSettings(parkPanel, parkSafe ? readyColor : unsafeColor);
+      updateTextSurfaceSettings(shipPanel, readyColor);
+      updateTextSurfaceSettings(bayAPanel, bayASafe ? readyColor : unsafeColor);
+      updateTextSurfaceSettings(bayBPanel, bayBSafe ? readyColor : unsafeColor);
+
+      parkPanel.WriteText(parkSafe ? "Move Crane\nto\nPark" : "Cannot\nPark With\nBattery", false);
+      shipPanel.WriteText("Move Crane\nto\nShip Hole", false);
+      bayAPanel.WriteText(bayASafe ? "Move Crane\nto\nBay A" : "Disabled\nUnsafe\nMovement", false);
+      bayBPanel.WriteText(bayBSafe ? "Move Crane\nto\nBay B" : "Disabled\nUnsafe\nMovement", false);
+    }
   }
 }
 
@@ -504,8 +506,11 @@ public void Main(string arg, UpdateType updateType) {
   IMyBlockGroup eStopButtonsGroup = GridTerminalSystem.GetBlockGroupWithName(_eStopButtons);
   eStopButtonsGroup.GetBlocksOfType<IMyButtonPanel>(eStopButtons);
 
+  List<IMyButtonPanel> controlPanels = new List<IMyButtonPanel>();
+  IMyBlockGroup controlPanelsGroup = GridTerminalSystem.GetBlockGroupWithName(_controlPanels);
+  controlPanelsGroup.GetBlocksOfType<IMyButtonPanel>(controlPanels);
+
   IMyTextPanel statusPanel = GridTerminalSystem.GetBlockWithName(_statusPanelName) as IMyTextPanel;
-  IMyButtonPanel controlPanel = GridTerminalSystem.GetBlockWithName(_controlPanelName) as IMyButtonPanel;
   IMyMotorAdvancedStator doorHinge = GridTerminalSystem.GetBlockWithName(_doorHingeName) as IMyMotorAdvancedStator;
 
   List<IMyPistonBase> allPistons = lowerPistons.Concat(middlePistons).Concat(upperPistons).ToList();
@@ -701,7 +706,7 @@ public void Main(string arg, UpdateType updateType) {
     }
 
     // Done doing stuff, update user on status
-    updateButtons(controlPanel, eStopButtons, !magPlatesLocked, !(magPlatesLocked && bayALocked), !(magPlatesLocked && bayBLocked));
+    updateButtons(controlPanels, eStopButtons, !magPlatesLocked, !(magPlatesLocked && bayALocked), !(magPlatesLocked && bayBLocked));
     updateLights(statusLights);
     updateScreen(statusPanel, magPlatesLocked, bayALocked, bayBLocked);
   }

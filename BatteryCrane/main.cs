@@ -464,9 +464,10 @@ public void Main(string arg, UpdateType updateType) {
   if (Storage == null) {
     Storage = "";
   }
-  Random rnd = new Random(); // DEBUG
-  Echo("Running: rand:" + rnd.Next(100)); // DEBUG
-  Echo("Starting Storage:" + Storage); // DEBUG
+
+  Random rnd = new Random();
+  Echo("Running: rand:" + rnd.Next(100));
+  Echo("Storage:" + Storage);
 
   string autoStr = rawAutoStr + modeSplit;
   string completeStr = rawCompleteStr + modeSplit;
@@ -704,6 +705,4 @@ public void Main(string arg, UpdateType updateType) {
     updateLights(statusLights);
     updateScreen(statusPanel, magPlatesLocked, bayALocked, bayBLocked);
   }
-
-  Echo("Ending Storage:" + Storage); // DEBUG
 }

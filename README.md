@@ -19,6 +19,8 @@ This is a list of all projects I am working on currently, or have finished.  If 
   - This is a stupid little program that repeatedly changed the color of a spotlight.  This was made at about 3AM in conjunction with a shutter system inside a dark "theatre" that made the spotlight only show as a very tiny pixel.  This light was also made to flash on and off using a rotor with a catwalk repeatedly blocking the light.
 - SimpleAutoRename
   - Very very very basic program to add a prefix to all blocks on a grid.
+- ThumperController
+  - Program for safely automating and monitoring a Thumper (spinning hole cutter using drills, meant for planet-side use).  Can phone home to another grid to notify of damage or when a cut is done.
 - Zamboni Scripts
   - This folder contains the scripts needed to run an ice scraping vehicle I built.  For a showcase of this, see here: https://www.youtube.com/watch?v=da0I-cJfyqQ
 

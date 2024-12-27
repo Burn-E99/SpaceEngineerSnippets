@@ -1,0 +1,4 @@
+this script will regulate the extension and rotation of a "thumper driller"
+most of this document is handwritten and will not be transferred here, to short of it:
+depth and radial cuts have grouped stages for unlocking and extending
+thumper will be able to phone home to another grid when something goes wrong (ie grid taking any damage, rotor stuck)

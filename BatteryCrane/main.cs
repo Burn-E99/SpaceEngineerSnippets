@@ -37,7 +37,7 @@ const string _statusLightGroup = "BC Status Lights";
 // Hinge for floor door
 const string _doorHingeName = "BC Door Hinge";
 // Group of Sci-Fi Four-Button Panels for controlling the crane
-const string _controlPanels = "BC Button Panel";
+const string _controlPanels = "BC Button Panels";
 // Group of Sci-Fi One-Button Panels for E-STOP buttons
 const string _eStopButtons = "BC E-STOP Buttons";
 

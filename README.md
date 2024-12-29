@@ -14,7 +14,7 @@ This is a list of all projects I am working on currently, or have finished.  If 
 - LogisticBotDrone
   - This program's idea comes from the game Factorio and it's amazing item delivery system, logistic bots.  This program allows the user to select parts from a list and counts for each item, and the Logistic Drone will collect the desired items and deliver them to the player.
 - OxygenGeneratorMonitor
-  - This that the level of an oxygen tank, and turns an attached oxygen generator on and off when needed.  This allows the player to (using an air vent) depressurize the room safely and without wasting oxygen.
+  - This program monitors the level of an oxygen tank, and turns an attached oxygen generator on and off when needed.  This allows the player to (using an air vent) depressurize the room safely and without wasting oxygen.
 - RGBDerp
   - This is a stupid little program that repeatedly changed the color of a spotlight.  This was made at about 3AM in conjunction with a shutter system inside a dark "theatre" that made the spotlight only show as a very tiny pixel.  This light was also made to flash on and off using a rotor with a catwalk repeatedly blocking the light.
 - SimpleAutoRename

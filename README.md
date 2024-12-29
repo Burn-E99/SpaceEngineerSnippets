@@ -5,7 +5,7 @@ This repository will hold all code that I have written for the game Space Engine
 This is a list of all projects I am working on currently, or have finished.  If the project is finished, I will mark it with a [COMPLETE] tag, and a basic version number will be given.
 - AutomaticAirLock
   - This program + blueprint is a fully automatic airlock that works based on sensors at each door.  This will automatically pressurize/depressurize the rooms on either side, along with opening and closing the doors as the player moves through it.
-- `COMPLETE-V1` - BatteryCrane
+- `COMPLETE-V1.1` - BatteryCrane
   - Program for safely automating the movement of a basic gantry-like crane.  Said crane is used to move large battery "clumps" from a ship and into a dedicated charging/storage location.  This could be adapted to other gantry-like cranes.
 - ChestRequester
   - This program would make a storage container act like a Factorio requester chest.
@@ -22,7 +22,8 @@ This is a list of all projects I am working on currently, or have finished.  If 
 - ThumperController
   - Program for safely automating and monitoring a Thumper (spinning hole cutter using drills, meant for planet-side use).  Can phone home to another grid to notify of damage or when a cut is done.
 - Zamboni Scripts
-  - This folder contains the scripts needed to run an ice scraping vehicle I built.  For a showcase of this, see here: https://www.youtube.com/watch?v=da0I-cJfyqQ
+  - This folder contains the scripts needed to run an ice scraping vehicle I built.
+  - Showcase video: https://www.youtube.com/watch?v=da0I-cJfyqQ
 
 ---
 

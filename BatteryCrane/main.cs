@@ -103,6 +103,14 @@ public Program() {
   Runtime.UpdateFrequency = UpdateFrequency.Update10;
 }
 
+// Group Getter
+List<T> getBlocksFromGroup<T>(string groupName) where T : class {
+  List<T> blocks = new List<T>();
+  IMyBlockGroup blockGroup = GridTerminalSystem.GetBlockGroupWithName(groupName);
+  blockGroup.GetBlocksOfType<T>(blocks);
+  return blocks;
+}
+
 // Utility functions for piston groups
 void applyPistonDistanceLimit(List<IMyPistonBase> pistons, float minDist, float maxDist) {
   foreach (IMyPistonBase piston in pistons) {
@@ -474,42 +482,15 @@ public void Main(string arg, UpdateType updateType) {
   string autoStr = rawAutoStr + modeSplit;
   string completeStr = rawCompleteStr + modeSplit;
 
-  List<IMyPistonBase> lowerPistons = new List<IMyPistonBase>();
-  IMyBlockGroup lowerPistonsGroup = GridTerminalSystem.GetBlockGroupWithName(_lowerPistonGroup);
-  lowerPistonsGroup.GetBlocksOfType<IMyPistonBase>(lowerPistons);
-
-  List<IMyPistonBase> middlePistons = new List<IMyPistonBase>();
-  IMyBlockGroup middlePistonsGroup = GridTerminalSystem.GetBlockGroupWithName(_middlePistonGroup);
-  middlePistonsGroup.GetBlocksOfType<IMyPistonBase>(middlePistons);
-
-  List<IMyPistonBase> upperPistons = new List<IMyPistonBase>();
-  IMyBlockGroup upperPistonsGroup = GridTerminalSystem.GetBlockGroupWithName(_upperPistonGroup);
-  upperPistonsGroup.GetBlocksOfType<IMyPistonBase>(upperPistons);
-
-  List<IMyLandingGear> magPlates = new List<IMyLandingGear>();
-  IMyBlockGroup magPlatesGroup = GridTerminalSystem.GetBlockGroupWithName(_magPlateGroup);
-  magPlatesGroup.GetBlocksOfType<IMyLandingGear>(magPlates);
-
-  List<IMyShipMergeBlock> bayAMergeBlocks = new List<IMyShipMergeBlock>();
-  IMyBlockGroup bayAMergeBlocksGroup = GridTerminalSystem.GetBlockGroupWithName(_bayAMergeBlockGroup);
-  bayAMergeBlocksGroup.GetBlocksOfType<IMyShipMergeBlock>(bayAMergeBlocks);
-
-  List<IMyShipMergeBlock> bayBMergeBlocks = new List<IMyShipMergeBlock>();
-  IMyBlockGroup bayBMergeBlocksGroup = GridTerminalSystem.GetBlockGroupWithName(_bayBMergeBlockGroup);
-  bayBMergeBlocksGroup.GetBlocksOfType<IMyShipMergeBlock>(bayBMergeBlocks);
-
-  List<IMyLightingBlock> statusLights = new List<IMyLightingBlock>();
-  IMyBlockGroup statusLightsGroup = GridTerminalSystem.GetBlockGroupWithName(_statusLightGroup);
-  statusLightsGroup.GetBlocksOfType<IMyLightingBlock>(statusLights);
-
-  List<IMyButtonPanel> eStopButtons = new List<IMyButtonPanel>();
-  IMyBlockGroup eStopButtonsGroup = GridTerminalSystem.GetBlockGroupWithName(_eStopButtons);
-  eStopButtonsGroup.GetBlocksOfType<IMyButtonPanel>(eStopButtons);
-
-  List<IMyButtonPanel> controlPanels = new List<IMyButtonPanel>();
-  IMyBlockGroup controlPanelsGroup = GridTerminalSystem.GetBlockGroupWithName(_controlPanels);
-  controlPanelsGroup.GetBlocksOfType<IMyButtonPanel>(controlPanels);
-
+  List<IMyPistonBase> lowerPistons = getBlocksFromGroup<IMyPistonBase>(_lowerPistonGroup);
+  List<IMyPistonBase> middlePistons = getBlocksFromGroup<IMyPistonBase>(_middlePistonGroup);
+  List<IMyPistonBase> upperPistons = getBlocksFromGroup<IMyPistonBase>(_upperPistonGroup);
+  List<IMyLandingGear> magPlates = getBlocksFromGroup<IMyLandingGear>(_magPlateGroup);
+  List<IMyShipMergeBlock> bayAMergeBlocks = getBlocksFromGroup<IMyShipMergeBlock>(_bayAMergeBlockGroup);
+  List<IMyShipMergeBlock> bayBMergeBlocks = getBlocksFromGroup<IMyShipMergeBlock>(_bayBMergeBlockGroup);
+  List<IMyLightingBlock> statusLights = getBlocksFromGroup<IMyLightingBlock>(_statusLightGroup);
+  List<IMyButtonPanel> eStopButtons = getBlocksFromGroup<IMyButtonPanel>(_eStopButtons);
+  List<IMyButtonPanel> controlPanels = getBlocksFromGroup<IMyButtonPanel>(_controlPanels);
   IMyTextPanel statusPanel = GridTerminalSystem.GetBlockWithName(_statusPanelName) as IMyTextPanel;
   IMyMotorAdvancedStator doorHinge = GridTerminalSystem.GetBlockWithName(_doorHingeName) as IMyMotorAdvancedStator;
 

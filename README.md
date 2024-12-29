@@ -2,10 +2,10 @@
 This repository will hold all code that I have written for the game Space Engineers.
 
 ## Project List
-This is a list of all projects I am working on currently, or have finished.  If the project is finished, I will mark it with a [COMPLETE] tag, and a basic version number will be given.
+This is a list of all projects I am working on currently, or have finished.  If the project is finished, I will mark it with a `COMPLETE` tag, and a basic version number will be given.
 - AutomaticAirLock
   - This program + blueprint is a fully automatic airlock that works based on sensors at each door.  This will automatically pressurize/depressurize the rooms on either side, along with opening and closing the doors as the player moves through it.
-- `COMPLETE-V1.1` - BatteryCrane
+- `COMPLETE-V1.2` - BatteryCrane
   - Program for safely automating the movement of a basic gantry-like crane.  Said crane is used to move large battery "clumps" from a ship and into a dedicated charging/storage location.  This could be adapted to other gantry-like cranes.
 - ChestRequester
   - This program would make a storage container act like a Factorio requester chest.
@@ -29,6 +29,7 @@ This is a list of all projects I am working on currently, or have finished.  If 
 
 ### A note for future self
 Game documentation has been removed from this repository as I found a good documentation source:
+- https://keensoftwarehouse.github.io/SpaceEngineersModAPI/
 - https://github.com/malware-dev/MDK-SE/wiki/Api-Index
 - https://github.com/malforge/mdk2
 

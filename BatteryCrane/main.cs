@@ -103,12 +103,19 @@ public Program() {
   Runtime.UpdateFrequency = UpdateFrequency.Update10;
 }
 
-// Group Getter
+// Utility functions for managing groups and lists
 List<T> getBlocksFromGroup<T>(string groupName) where T : class {
   List<T> blocks = new List<T>();
   IMyBlockGroup blockGroup = GridTerminalSystem.GetBlockGroupWithName(groupName);
   blockGroup.GetBlocksOfType<T>(blocks);
   return blocks;
+}
+List<T> mergeLists<T>(params List<T>[] listsToMerge) {
+  List<T> mergedList = new List<T>();
+  foreach (List<T> list in listsToMerge) {
+    mergedList.AddRange(list);
+  }
+  return mergedList;
 }
 
 // Utility functions for piston groups
@@ -494,7 +501,7 @@ public void Main(string arg, UpdateType updateType) {
   IMyTextPanel statusPanel = GridTerminalSystem.GetBlockWithName(_statusPanelName) as IMyTextPanel;
   IMyMotorAdvancedStator doorHinge = GridTerminalSystem.GetBlockWithName(_doorHingeName) as IMyMotorAdvancedStator;
 
-  List<IMyPistonBase> allPistons = lowerPistons.Concat(middlePistons).Concat(upperPistons).ToList();
+  List<IMyPistonBase> allPistons = mergeLists<IMyPistonBase>(lowerPistons, middlePistons, upperPistons);
 
   if ((updateType & (UpdateType.Trigger | UpdateType.Terminal)) != 0) {
     if (arg == stopStr) {
